@@ -1,0 +1,14 @@
+<div>
+  <select [(ngModel)]="selectedLang" (change)="changeLanguage(selectedLang)">
+  <option value="fr">English</option>
+  <option value="en">French</option>
+</select>
+</div>
+
+<hr>
+
+<div *ngFor="let key of keys">
+  <span [ngClass]="{'missing': isMissing(key)}">
+    {{ getTranslation(key) }}
+  </span>
+</div>
