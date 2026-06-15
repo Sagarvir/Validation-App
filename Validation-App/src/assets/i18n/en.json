@@ -3,5 +3,8 @@
   "OFFICE": "Office",
   "MOUSE": "Mouse",
   "KEYPAD": "Keypad",
-  "HELLO": "Hello"
+  "HELLO": "Hello",
+  "WELCOME_TO": "Welcome to",
+  "THIS_APP_HELPS": "This application helps you translate text easily while keeping product names like",
+  "UNCHANGED": "unchanged."
 }

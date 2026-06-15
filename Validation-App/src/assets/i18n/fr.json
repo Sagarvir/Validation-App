@@ -2,6 +2,9 @@
   "OPEN": "Ouvrir",
   "OFFICE": "Bureau",
   "MOUSE": "Souris",
-  "KEYPAD": "Clavier"
- 
+  "KEYPAD": "Clavier",
+  "HELL": "Bonjour",
+  "WELCOME_TO": "Bienvenue à",
+  "THIS_APP_HELPS": "Cette application vous aide à traduire du texte facilement tout en conservant les noms de produits comme",
+  "UNCHANGE": "inchangés."
 }

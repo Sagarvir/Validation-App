@@ -1,8 +1,10 @@
+
 <div>
-  <select [(ngModel)]="selectedLang" (change)="changeLanguage(selectedLang)">
-  <option value="fr">English</option>
-  <option value="en">French</option>
-</select>
+  <select [(ngModel)]="selectedLang" (ngModelChange)="changeLanguage($event)">
+    <option *ngFor="let lang of languages" [value]="lang.code">
+      {{ lang.label }}
+    </option>
+  </select>
 </div>
 
 <hr>
@@ -12,3 +14,23 @@
     {{ getTranslation(key) }}
   </span>
 </div>
+
+<hr>
+
+<p>
+  
+<span [ngClass]="{'missing': isMissing('WELCOME_TO')}">
+    {{ getTranslation('WELCOME_TO') }}
+  </span>
+ Translation Management App.
+  
+<span [ngClass]="{'missing': isMissing('THIS_APP_HELPS')}">
+    {{ getTranslation('THIS_APP_HELPS') }}
+  </span>
+ Translation Management App
+  
+<span [ngClass]="{'missing': isMissing('UNCHANGED')}">
+    {{ getTranslation('UNCHANGED') }}
+  </span>
+
+</p>

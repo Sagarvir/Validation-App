@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';  
 @Component({
   selector: 'app-translator',
   standalone: true,
@@ -14,7 +15,10 @@ export class TranslatorComponent {
 
   languages = [
   { code: 'en', label: 'English' },
-  { code: 'fr', label: 'French' }
+  { code: 'fr', label: 'French' },
+  {code: 'es', label: 'Spanish' },
+  {code: 'de', label: 'German' },
+  {code: 'ja', label : 'Japanese' },
 ];
   selectedLang = 'en';
 
@@ -24,7 +28,7 @@ export class TranslatorComponent {
   translations: any = {};
 englishTranslations: any = {};
 
-constructor(private translate: TranslateService) {
+constructor(private translate: TranslateService, private cdr: ChangeDetectorRef) {
   this.translate.setDefaultLang('en');
   this.translate.use('en');
 
@@ -37,9 +41,11 @@ constructor(private translate: TranslateService) {
   this.loadTranslations(this.selectedLang);
 }
 
+
 loadTranslations(lang: string) {
   this.translate.getTranslation(lang).subscribe(res => {
     this.translations = res;
+    this.cdr.detectChanges();   // ✅ FIX
   });
 }
 
